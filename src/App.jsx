@@ -1,5 +1,6 @@
 import spaces from "./data/spaces"
 import SpaceCard from "./components/SpaceCard"
+import Gallery from "./components/Gallery"
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           />
         ))}
       </section>
+      <Gallery />
     </main>
   )
 }
