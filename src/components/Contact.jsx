@@ -2,7 +2,7 @@ import site from "../data/site"
 
 function Contact() {
   return (
-    <section>
+    <section className="section contact" id="contact">
       <h2>Visit or Contact Us</h2>
       <p><strong>Address:</strong> {site.address}</p>
       <p><strong>Phone:</strong> <a href={`tel:${site.phone}`}>{site.phone}</a></p>

@@ -1,4 +1,240 @@
-.whatsapp-button {
+:root {
+    --orange: #e8671c;
+    --orange-dark: #c9540f;
+    --dark: #1b1b1b;
+    --cream: #fbf8f4;
+    --text: #222222;
+    --muted: #666666;
+    --line: #ebe4dc;
+    --heading: "Playfair Display", Georgia, serif;
+    --body: "Inter", system-ui, sans-serif;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    margin: 0;
+    font-family: var(--body);
+    color: var(--text);
+    background: var(--cream);
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3 {
+    font-family: var(--heading);
+    font-weight: 500;
+    line-height: 1.15;
+    margin: 0 0 0.5em;
+  }
+  
+  /* Navbar */
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 14px 5%;
+    background: white;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--text);
+  }
+  
+  .logo-mark {
+    font-family: var(--heading);
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--orange);
+    line-height: 1;
+  }
+  
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+  }
+  
+  .logo-text strong {
+    font-family: var(--heading);
+    font-weight: 500;
+    font-size: 1.2rem;
+  }
+  
+  .logo-text small {
+    font-size: 0.65rem;
+    letter-spacing: 0.4em;
+    text-align: center;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 28px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 0.9rem;
+  }
+  
+  .nav-links a:hover {
+    color: var(--orange);
+  }
+  
+  .nav-whatsapp {
+    background: #128c4b;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  
+  /* Hero */
+  .hero {
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    padding: 80px 5%;
+    color: white;
+    background:
+      linear-gradient(90deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.1)),
+      url("/gallery/covered-1.jpg") center / cover;
+  }
+  
+  .hero-content {
+    max-width: 520px;
+  }
+  
+  .hero h1 {
+    font-size: clamp(2.6rem, 6vw, 4.2rem);
+  }
+  
+  .hero h1 span {
+    display: block;
+    color: var(--orange);
+  }
+  
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.35em;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  
+  .hero-text {
+    font-size: 1.1rem;
+    margin: 0 0 28px;
+  }
+  
+  .button {
+    display: inline-block;
+    background: var(--orange);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .button:hover {
+    background: var(--orange-dark);
+  }
+  
+  /* Sections */
+  .section {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 72px 20px;
+  }
+  
+  .section h2 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    text-align: center;
+  }
+  
+  /* Spaces */
+  .spaces-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+  
+  .space-card {
+    background: white;
+    padding: 28px;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  }
+  
+  .space-card h3 {
+    font-size: 1.8rem;
+  }
+  
+  /* Gallery */
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+  
+  .filter {
+    font: inherit;
+    font-size: 0.9rem;
+    padding: 8px 20px;
+    border: none;
+    background: #efebe6;
+    color: var(--text);
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .filter.active {
+    background: var(--orange);
+    color: white;
+  }
+  
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 10px;
+  }
+  
+  .gallery-grid img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+    border-radius: 4px;
+  }
+  
+  /* Contact */
+  .contact a {
+    color: var(--orange);
+    font-weight: 600;
+  }
+  
+  /* Floating WhatsApp button */
+  .whatsapp-button {
     position: fixed;
     right: 20px;
     bottom: 20px;
@@ -7,5 +243,17 @@
     padding: 12px 18px;
     border-radius: 999px;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Phones */
+  @media (max-width: 760px) {
+    .nav-links {
+      display: none;
+    }
+  
+    .hero {
+      min-height: 420px;
+    }
   }

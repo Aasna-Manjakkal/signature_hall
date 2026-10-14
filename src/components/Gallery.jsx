@@ -11,20 +11,23 @@ function Gallery() {
     : gallery.filter((photo) => photo.space === selected)
 
   return (
-    <section>
-      <h2>Gallery</h2>
+<section className="section" id="gallery">      <h2>Gallery</h2>
 
-      <div>
+      <div className="filters">
         {filters.map((name) => (
-          <button key={name} onClick={() => setSelected(name)}>
+          <button
+            key={name}
+            onClick={() => setSelected(name)}
+            className={name === selected ? "filter active" : "filter"}
+          >
             {name}
           </button>
         ))}
       </div>
 
-      <div>
+      <div className="gallery-grid">
         {photos.map((photo) => (
-          <img key={photo.id} src={photo.src} alt={photo.alt} width="300" />
+          <img key={photo.id} src={photo.src} alt={photo.alt} />
         ))}
       </div>
     </section>
