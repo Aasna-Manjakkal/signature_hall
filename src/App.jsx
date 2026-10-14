@@ -1,10 +1,12 @@
 import spaces from "./data/spaces"
 import SpaceCard from "./components/SpaceCard"
 import Gallery from "./components/Gallery"
-import Contact from "./components/Contact"
 import WhatsAppButton from "./components/WhatsAppButton"
 import Navbar from "./components/Navbar"
 import Features from "./components/Features"
+import WhyChoose from "./components/WhyChoose"
+import CallToAction from "./components/CallToAction"
+import Footer from "./components/Footer"
 
 function App() {
   return (
@@ -45,8 +47,10 @@ function App() {
       </section>
 
       <Gallery />
-      <Contact />
+      <WhyChoose />
+      <CallToAction />
       </main>
+      <Footer />
 
       <WhatsAppButton />
     </>

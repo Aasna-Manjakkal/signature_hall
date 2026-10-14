@@ -1,8 +1,7 @@
 import site from "../data/site"
 
 function Navbar() {
-  const message = "Hello, I would like to enquire about booking Signature Hall."
-  const whatsappLink = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(message)}`
+  
 
   return (
     <nav className="navbar">
@@ -21,7 +20,7 @@ function Navbar() {
         <a href="#contact">Contact</a>
       </div>
 
-      <a href={whatsappLink} target="_blank" rel="noreferrer" className="nav-whatsapp">
+      <a href={site.whatsappLink} target="_blank" rel="noreferrer" className="nav-whatsapp">
         WhatsApp Us
       </a>
     </nav>
