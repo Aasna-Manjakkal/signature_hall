@@ -4,6 +4,8 @@ import Gallery from "./components/Gallery"
 import Contact from "./components/Contact"
 import WhatsAppButton from "./components/WhatsAppButton"
 import Navbar from "./components/Navbar"
+import Features from "./components/Features"
+
 function App() {
   return (
     <>
@@ -16,24 +18,34 @@ function App() {
         <a href="#spaces" className="button">Explore Our Spaces →</a>
         </div>
       </header>
+      <Features />
 
       <main>
       <section className="section" id="spaces">
-          <h2>Our Spaces</h2>
-          <div className="spaces-grid">
-            {spaces.map((space) => (
-              <SpaceCard
-                key={space.id}
-                name={space.name}
-                bestFor={space.bestFor}
-                description={space.description}
-              />
-            ))}
-          </div>
-        </section>
+        <div className="section-heading">
+          <p className="eyebrow">Our Spaces</p>
+          <h2>Two Beautiful Spaces, <span>Endless Possibilities</span></h2>
+          <p>
+            Whether it's an intimate meeting or a grand celebration, Signature Hall offers
+            spaces that can be arranged just the way you envision.
+           </p>
+        </div>
 
-        <Gallery />
-        <Contact />
+        <div className="spaces-grid">
+          {spaces.map((space) => (
+            <SpaceCard
+              key={space.id}
+              name={space.name}
+              bestFor={space.bestFor}
+              description={space.description}
+              image={space.image}
+            />
+         ))}
+        </div>
+      </section>
+
+      <Gallery />
+      <Contact />
       </main>
 
       <WhatsAppButton />

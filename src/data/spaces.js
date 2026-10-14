@@ -1,23 +1,18 @@
 const spaces = [
-    {
-      id: 1,
-      name: "Upper Hall",
-      bestFor: "Small functions and meetings",
-      description: "A quieter hall on the top floor for engagements, birthdays and business meetings.",
-    },
-    {
-      id: 2,
-      name: "Covered Ground",
-      bestFor: "Weddings and receptions",
-      description: "A large roofed space on the ground level, protected from sun and rain.",
-    },
-    {
-      id: 3,
-      name: "Open Ground",
-      bestFor: "Large outdoor functions",
-      description: "An open-air space for big gatherings and evening receptions.",
-    },
-  ]
-  
-  export default spaces
-  
+  {
+    id: 1,
+    name: "Upper Floor",
+    bestFor: "Intimate Gatherings & Meetings",
+    description: "Ideal for small functions, family gatherings, meetings, workshops and private events.",
+    image: "/gallery/upper-1.jpg",
+  },
+  {
+    id: 2,
+    name: "Ground Floor",
+    bestFor: "Weddings, Receptions & Celebrations",
+    description: "Spacious and versatile for weddings, receptions and large gatherings. Can be arranged as open or covered, as you prefer.",
+    image: "/gallery/covered-1.jpg",
+  },
+]
+
+export default spaces

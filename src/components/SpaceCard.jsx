@@ -1,11 +1,15 @@
-function SpaceCard({ name, bestFor, description }) {
-    return (
-      <article className="space-card">
+function SpaceCard({ name, bestFor, description, image }) {
+  return (
+    <article className="space-card">
+      <img src={image} alt={name} />
+      <div className="space-card-body">
         <h3>{name}</h3>
-        <p><strong>Best for:</strong> {bestFor}</p>
+        <p className="space-subtitle">{bestFor}</p>
         <p>{description}</p>
-      </article>
-    )
-  }
-  
-  export default SpaceCard
+        <a href="#gallery" className="outline-button">See Photos →</a>
+      </div>
+    </article>
+  )
+}
+
+export default SpaceCard
