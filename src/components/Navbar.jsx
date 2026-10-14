@@ -1,4 +1,5 @@
 import site from "../data/site"
+import WhatsAppIcon from "./WhatsAppIcon"
 
 function Navbar() {
   
@@ -21,8 +22,9 @@ function Navbar() {
       </div>
 
       <a href={site.whatsappLink} target="_blank" rel="noreferrer" className="nav-whatsapp">
+        <WhatsAppIcon size={20} />
         WhatsApp Us
-      </a>
+        </a>
     </nav>
   )
 }

@@ -1,10 +1,10 @@
 
-const whatsapp = "919876543210"
+const whatsapp = "919003703108"
 const message = "Hello, I would like to enquire about booking Signature Hall."
   
 const site = {
     name: "Signature Hall",
-    phone: "+91 98765 43210",
+    phone: "+91 90037 03108",
     whatsapp: whatsapp,
     whatsappLink: `https://wa.me/${whatsapp}?text=${encodeURIComponent(message)}`,
     address: "Signature Hall, Palliyamoola Junction, Kannur, Kerala, PO 670008",
