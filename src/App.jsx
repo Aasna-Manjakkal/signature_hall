@@ -1,6 +1,8 @@
 import spaces from "./data/spaces"
 import SpaceCard from "./components/SpaceCard"
 import Gallery from "./components/Gallery"
+import Contact from "./components/Contact"
+import WhatsAppButton from "./components/WhatsAppButton"
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
         ))}
       </section>
       <Gallery />
+      <Contact />
+      <WhatsAppButton />
     </main>
   )
 }
