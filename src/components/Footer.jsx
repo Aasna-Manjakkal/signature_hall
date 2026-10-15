@@ -1,6 +1,7 @@
 import { MapPin, Phone, MessageCircle } from "lucide-react"
 import site from "../data/site"
 import { Link } from "react-router-dom"
+import InstagramIcon from "./InstagramIcon"
 
 function Footer() {
   const year = new Date().getFullYear()
@@ -37,6 +38,11 @@ function Footer() {
           <a href={`tel:${site.phone}`} className="footer-row">
             <Phone size={18} /> {site.phone}
           </a>
+          {site.instagram && (
+          <a href={site.instagram} target="_blank" rel="noreferrer" className="footer-row">
+            <InstagramIcon size={18} /> Instagram
+          </a>
+        )}
         </div>
       </div>
 

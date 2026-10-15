@@ -43,7 +43,7 @@ function Home() {
         </div>
       </section>
 
-      <Gallery />
+      <Gallery limit={6} />
       <WhyChoose />
     </>
   )
