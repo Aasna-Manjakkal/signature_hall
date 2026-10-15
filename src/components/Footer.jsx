@@ -1,5 +1,6 @@
 import { MapPin, Phone, MessageCircle } from "lucide-react"
 import site from "../data/site"
+import { Link } from "react-router-dom"
 
 function Footer() {
   const year = new Date().getFullYear()
@@ -14,10 +15,12 @@ function Footer() {
         </div>
 
         <div>
-          <h4>Quick Links</h4>
-          <a href="#top">Home</a>
-          <a href="#spaces">Our Spaces</a>
-          <a href="#gallery">Gallery</a>
+            <h4>Quick Links</h4>
+            <Link to="/">Home</Link>
+            <Link to="/spaces">Our Spaces</Link>
+            <Link to="/gallery">Gallery</Link>
+            <Link to="/about">About</Link>
+            <Link to="/contact">Contact</Link>
         </div>
 
         <div>

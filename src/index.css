@@ -22,11 +22,12 @@
     margin: 0;
     font-family: var(--body);
     color: var(--text);
-    background: var(--cream);
-    line-height: 1.6;
+    background: #fdf7f1 url("/decor/leaves.png") center top / cover fixed;    line-height: 1.6;
   }
   
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     font-family: var(--heading);
     font-weight: 500;
     line-height: 1.15;
@@ -95,10 +96,6 @@
     padding: 6px 0;
   }
   
-  .nav-links a:hover {
-    color: var(--orange);
-  }
-
   .nav-links a::after {
     content: "";
     position: absolute;
@@ -111,21 +108,25 @@
     transition: transform 0.25s ease;
   }
   
+  .nav-links a:hover {
+    color: var(--orange);
+  }
+  
   .nav-links a:hover::after {
     transform: scaleX(1);
   }
-
+  
   .nav-whatsapp {
-    background: #128c4b;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.9rem;
     display: inline-flex;
     align-items: center;
     gap: 8px;
+    background: #128c4b;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
   }
   
   /* Hero */
@@ -137,7 +138,8 @@
     color: white;
     background:
       linear-gradient(90deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.1)),
-      url("/gallery/hero.jpg") center 55% / cover;  }
+      url("/gallery/hero.jpg") center 55% / cover;
+  }
   
   .hero-content {
     max-width: 520px;
@@ -187,20 +189,8 @@
     background: var(--orange-dark);
   }
   
-  /* Sections */
-  .section {
-    max-width: 1150px;
-    margin: 0 auto;
-    padding: 72px 20px;
-  }
-  
-  .section h2 {
-    font-size: clamp(2rem, 4vw, 2.8rem);
-    text-align: center;
-  }
-  
   /* Feature strip */
-.features {
+  .features {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     background: white;
@@ -235,6 +225,18 @@
     font-size: 0.85rem;
   }
   
+  /* Sections */
+  .section {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 72px 20px;
+  }
+  
+  .section h2 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    text-align: center;
+  }
+  
   /* Section headings */
   .section-heading {
     text-align: center;
@@ -251,11 +253,46 @@
     color: var(--orange);
   }
   
+  .section-heading h2::after {
+    content: "◆";
+    display: block;
+    width: 120px;
+    margin: 14px auto 0;
+    font-size: 0.6rem;
+    line-height: 1;
+    text-align: center;
+    color: var(--orange);
+    background:
+      linear-gradient(var(--orange), var(--orange)) left center / 45px 1px no-repeat,
+      linear-gradient(var(--orange), var(--orange)) right center / 45px 1px no-repeat;
+  }
+  
   .section-heading p {
     color: var(--muted);
   }
   
   /* Spaces */
+  #spaces {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  #spaces::after {
+    content: "";
+    position: absolute;
+    left: -30px;
+    top: 60px;
+    width: 200px;
+    height: 300px;
+    background: url("/decor/leaves.png") no-repeat center / contain;
+    opacity: 0.35;
+    pointer-events: none;
+  }
+  
+  #spaces > * {
+    position: relative;
+  }
+  
   .spaces-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -350,24 +387,8 @@
     border-radius: 4px;
   }
   
-  
-  
-  /* Floating WhatsApp button */
-  .whatsapp-button {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    background: #25d366;
-    color: white;
-    padding: 12px 18px;
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: 600;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  }
-
- /* Why choose cards */
-.reason-grid {
+  /* Why choose cards */
+  .reason-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 28px;
@@ -437,45 +458,10 @@
   @media (prefers-reduced-motion: reduce) {
     .reason-card,
     .reason-card::before,
-    .reason-icon {
+    .reason-icon,
+    .nav-links a::after {
       transition: none;
     }
-  }
-  
-  /* Call to action banner */
-.cta {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 24px;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 56px 20px;
-  }
-  
-  .cta h2 {
-    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
-    margin-bottom: 4px;
-  }
-  
-  .cta h2 span {
-    color: var(--orange);
-  }
-  
-  .cta p {
-    margin: 0;
-    color: var(--muted);
-  }
-  
-  .cta-button {
-    background: #128c4b;
-    color: white;
-    padding: 16px 32px;
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1.1rem;
   }
   
   /* Footer */
@@ -533,7 +519,7 @@
     align-items: center;
     gap: 8px;
   }
-
+  
   .footer-row svg {
     flex-shrink: 0;
     margin-top: 3px;
@@ -550,6 +536,59 @@
     padding-top: 20px;
     font-size: 0.8rem !important;
   }
+  
+  /* Current page in navbar */
+.nav-links a.active {
+    color: var(--orange);
+  }
+  
+  .nav-links a.active::after {
+    transform: scaleX(1);
+  }
+  
+  /* Page banner */
+  .page-header {
+    padding: 72px 5% 48px;
+    color: white;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .page-header h1 {
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    max-width: 600px;
+    margin-bottom: 16px;
+  }
+  
+  .page-header .eyebrow {
+    color: white;
+  }
+  
+  .breadcrumb {
+    display: flex;
+    gap: 10px;
+    font-size: 0.9rem;
+  }
+  
+  .breadcrumb a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .breadcrumb a:hover {
+    color: var(--orange);
+  }
+
+  /* Keep the footer at the bottom of short pages */
+  .layout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .layout main {
+    flex: 1;
+  }
 
   /* Phones */
   @media (max-width: 760px) {
@@ -559,5 +598,9 @@
   
     .hero {
       min-height: 420px;
+    }
+  
+    #spaces::after {
+      display: none;
     }
   }
