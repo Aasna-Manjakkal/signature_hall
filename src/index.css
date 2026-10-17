@@ -847,6 +847,166 @@
     color: var(--orange);
   }
 
+  /* Admin */
+  .admin-login {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+  }
+
+  .admin-card {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 28px;
+  }
+
+  .admin-login .admin-card {
+    width: 100%;
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .admin-login h1 {
+    font-size: 1.8rem;
+    margin: 0;
+  }
+
+  .admin-card label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-top: 6px;
+  }
+
+  .admin-card input,
+  .admin-card select,
+  .admin-card textarea {
+    font: inherit;
+    padding: 10px 12px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: #fffdfb;
+  }
+
+  .admin-card input:focus,
+  .admin-card select:focus,
+  .admin-card textarea:focus {
+    outline: 2px solid var(--orange);
+    border-color: transparent;
+  }
+
+  .admin-card .button {
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    font: inherit;
+    font-weight: 600;
+  }
+
+  .admin-card .button:disabled {
+    opacity: 0.6;
+    cursor: wait;
+  }
+
+  .admin-muted {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  .admin-error {
+    color: #b42318;
+    background: #fef3f2;
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  .admin-loading {
+    padding: 40px;
+    text-align: center;
+  }
+
+  .admin-shell {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    min-height: 100vh;
+  }
+
+  .admin-sidebar {
+    background: var(--dark);
+    color: #ddd;
+    padding: 24px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .admin-brand {
+    font-family: var(--heading);
+    font-size: 1.3rem;
+    color: white;
+    margin: 0;
+  }
+
+  .admin-sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .admin-sidebar nav a {
+    color: #ccc;
+    text-decoration: none;
+    padding: 10px 12px;
+    border-radius: 6px;
+  }
+
+  .admin-sidebar nav a:hover {
+    background: #2a2a2a;
+  }
+
+  .admin-sidebar nav a.active {
+    background: var(--orange);
+    color: white;
+  }
+
+  .admin-sidebar-footer {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .admin-sidebar-footer a,
+  .admin-sidebar-footer button {
+    color: #ccc;
+    background: none;
+    border: none;
+    font: inherit;
+    text-align: left;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .admin-sidebar-footer a:hover,
+  .admin-sidebar-footer button:hover {
+    color: var(--orange);
+  }
+
+  .admin-main {
+    padding: 32px;
+  }
+
+  .admin-main h1 {
+    font-size: 2rem;
+  }
+
   /* Phones */
   @media (max-width: 760px) {
 
@@ -879,4 +1039,8 @@
     grid-template-columns: 1fr;
     gap: 40px;
     }     
+
+    .admin-shell {
+    grid-template-columns: 1fr;
+    }
   }

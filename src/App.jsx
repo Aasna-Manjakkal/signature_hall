@@ -5,18 +5,38 @@ import SpacesPage from "./pages/SpacesPage"
 import GalleryPage from "./pages/GalleryPage"
 import AboutPage from "./pages/AboutPage"
 import ContactPage from "./pages/ContactPage"
+import { AuthProvider } from "./admin/AuthContext"
+import RequireAdmin from "./admin/RequireAdmin"
+import AdminLogin from "./admin/AdminLogin"
+import AdminLayout from "./admin/AdminLayout"
+import AdminHome from "./admin/AdminHome"
 
 function App() {
   return (
-    <Routes>
-      <Route element={<Layout />}>
-        <Route path="/" element={<Home />} />
-        <Route path="/spaces" element={<SpacesPage />} />
-        <Route path="/gallery" element={<GalleryPage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-      </Route>
-    </Routes>
+    <AuthProvider>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/spaces" element={<SpacesPage />} />
+          <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Route>
+
+        <Route path="/admin/login" element={<AdminLogin />} />
+
+        <Route
+          path="/admin"
+          element={
+            <RequireAdmin>
+              <AdminLayout />
+            </RequireAdmin>
+          }
+        >
+          <Route index element={<AdminHome />} />
+        </Route>
+      </Routes>
+    </AuthProvider>
   )
 }
 

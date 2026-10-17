@@ -1,6 +1,7 @@
 import express from "express"
 import cors from "cors"
 import galleryRoutes from "./routes/gallery.js"
+import adminRoutes from "./routes/admin.js"
 
 const app = express()
 const PORT = process.env.PORT || 4000
@@ -13,6 +14,7 @@ app.get("/api/health", (req, res) => {
 })
 
 app.use("/api/gallery", galleryRoutes)
+app.use("/api/admin", adminRoutes)
 
 app.use((req, res) => {
   res.status(404).json({ error: "Not found" })
