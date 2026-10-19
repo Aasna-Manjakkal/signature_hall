@@ -2,8 +2,13 @@ import express from "express"
 import cors from "cors"
 import galleryRoutes from "./routes/gallery.js"
 import adminRoutes from "./routes/admin.js"
+import enquiryRoutes from "./routes/enquiries.js"
+import eventRoutes from "./routes/events.js"
+import trackRoutes from "./routes/track.js"
+import statsRoutes from "./routes/stats.js"
 
 const app = express()
+app.set("trust proxy", 1)
 const PORT = process.env.PORT || 4000
 
 app.use(cors({ origin: process.env.CLIENT_ORIGIN || "http://localhost:5173" }))
@@ -15,6 +20,10 @@ app.get("/api/health", (req, res) => {
 
 app.use("/api/gallery", galleryRoutes)
 app.use("/api/admin", adminRoutes)
+app.use("/api/enquiries", enquiryRoutes)
+app.use("/api/events", eventRoutes)
+app.use("/api/track", trackRoutes)
+app.use("/api/stats", statsRoutes)
 
 app.use((req, res) => {
   res.status(404).json({ error: "Not found" })

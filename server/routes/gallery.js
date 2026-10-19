@@ -7,7 +7,7 @@ import requireAdmin from "../middleware/requireAdmin.js"
 const router = Router()
 
 const BUCKET = "gallery"
-const CATEGORIES = ["Weddings", "Receptions", "Meetings", "Decorations"]
+const CATEGORIES = ["Weddings", "Receptions", "Meetings", "Other"]
 const ALLOWED_TYPES = {
   "image/jpeg": "jpg",
   "image/png": "png",
