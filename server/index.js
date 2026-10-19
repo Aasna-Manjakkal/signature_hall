@@ -11,7 +11,12 @@ const app = express()
 app.set("trust proxy", 1)
 const PORT = process.env.PORT || 4000
 
-app.use(cors({ origin: process.env.CLIENT_ORIGIN || "http://localhost:5173" }))
+// Websites allowed to use this API (comma-separated in CLIENT_ORIGIN)
+const allowedOrigins = (process.env.CLIENT_ORIGIN || "http://localhost:5173")
+  .split(",")
+  .map((origin) => origin.trim())
+
+app.use(cors({ origin: allowedOrigins }))
 app.use(express.json())
 
 app.get("/api/health", (req, res) => {

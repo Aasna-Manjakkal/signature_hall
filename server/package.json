@@ -4,6 +4,9 @@
   "type": "module",
   "description": "API for the Signature Hall website",
   "main": "index.js",
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "dev": "node --watch --env-file=.env index.js",
     "start": "node index.js"
