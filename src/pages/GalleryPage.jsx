@@ -7,7 +7,7 @@ function GalleryPage() {
       <PageHeader
         eyebrow="Gallery"
         title="Moments that Matter"
-        image="/gallery/covered-2.jpg"
+        image="/gallery/gallery-header.jpg"
         crumb="Gallery"
       />
       <Gallery showHeading={false} large />

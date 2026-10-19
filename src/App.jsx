@@ -10,6 +10,9 @@ import RequireAdmin from "./admin/RequireAdmin"
 import AdminLogin from "./admin/AdminLogin"
 import AdminLayout from "./admin/AdminLayout"
 import AdminHome from "./admin/AdminHome"
+import AdminGallery from "./admin/AdminGallery"
+import AdminEnquiries from "./admin/AdminEnquiries"
+import AdminEvents from "./admin/AdminEvents"
 
 function App() {
   return (
@@ -34,6 +37,9 @@ function App() {
           }
         >
           <Route index element={<AdminHome />} />
+          <Route path="gallery" element={<AdminGallery />} />
+          <Route path="enquiries" element={<AdminEnquiries />} />
+          <Route path="calendar" element={<AdminEvents />} />
         </Route>
       </Routes>
     </AuthProvider>

@@ -9,7 +9,8 @@ function SpacesPage() {
       <PageHeader
         eyebrow="Our Spaces"
         title="Designed for Your Celebrations"
-        image="/gallery/upper-1.jpg"
+        image="/gallery/haldi.png"
+      
         crumb="Our Spaces"
       />
 

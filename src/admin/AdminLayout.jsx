@@ -10,8 +10,12 @@ function AdminLayout() {
       <aside className="admin-sidebar">
         <p className="admin-brand">Signature Hall</p>
         <nav>
-          <NavLink to="/admin" end>Dashboard</NavLink>
+            <NavLink to="/admin" end>Dashboard</NavLink>
+            <NavLink to="/admin/enquiries">Enquiries</NavLink>
+            <NavLink to="/admin/calendar">Calendar</NavLink>
+            <NavLink to="/admin/gallery">Gallery</NavLink>
         </nav>
+
         <div className="admin-sidebar-footer">
           <p className="admin-muted">{session?.user.email}</p>
           <Link to="/">View website</Link>

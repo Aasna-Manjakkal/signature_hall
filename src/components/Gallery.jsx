@@ -1,18 +1,27 @@
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
-import gallery from "../data/gallery"
 
-const filters = ["All", "Weddings", "Receptions", "Meetings", "Decorations"]
+const filters = ["All", "Weddings", "Receptions", "Meetings", "Other"]
+const API_URL = import.meta.env.VITE_API_URL
 
 function Gallery({ showHeading = true, limit, large = false }) {
+  const [gallery, setGallery] = useState([])
+  const [status, setStatus] = useState("loading")
   const [selected, setSelected] = useState("All")
   const [openPhoto, setOpenPhoto] = useState(null)
 
-  const photos = selected === "All"
-    ? gallery
-    : gallery.filter((photo) => photo.category === selected)
-
-  const shown = limit ? photos.slice(0, limit) : photos
+  useEffect(() => {
+    fetch(`${API_URL}/api/gallery`)
+      .then((response) => {
+        if (!response.ok) throw new Error("Request failed")
+        return response.json()
+      })
+      .then((data) => {
+        setGallery(data)
+        setStatus("ready")
+      })
+      .catch(() => setStatus("error"))
+  }, [])
 
   useEffect(() => {
     if (!openPhoto) return
@@ -24,6 +33,12 @@ function Gallery({ showHeading = true, limit, large = false }) {
     window.addEventListener("keydown", handleKey)
     return () => window.removeEventListener("keydown", handleKey)
   }, [openPhoto])
+
+  const photos = selected === "All"
+    ? gallery
+    : gallery.filter((photo) => photo.category === selected)
+
+  const shown = limit ? photos.slice(0, limit) : photos
 
   return (
     <section className="section" id="gallery">
@@ -46,6 +61,14 @@ function Gallery({ showHeading = true, limit, large = false }) {
         ))}
       </div>
 
+      {status === "loading" && <p className="gallery-status">Loading photos…</p>}
+      {status === "error" && (
+        <p className="gallery-status">Photos couldn't be loaded right now. Please try again later.</p>
+      )}
+      {status === "ready" && shown.length === 0 && (
+        <p className="gallery-status">New photos coming soon.</p>
+      )}
+
       <div className={large ? "gallery-grid large" : "gallery-grid"}>
         {shown.map((photo) => (
           <button
@@ -53,7 +76,7 @@ function Gallery({ showHeading = true, limit, large = false }) {
             className="gallery-item"
             onClick={() => setOpenPhoto(photo)}
           >
-            <img src={photo.src} alt={photo.alt} />
+            <img src={photo.image_url} alt={photo.alt} loading="lazy" />
           </button>
         ))}
       </div>
@@ -66,7 +89,7 @@ function Gallery({ showHeading = true, limit, large = false }) {
 
       {openPhoto && (
         <div className="lightbox" onClick={() => setOpenPhoto(null)}>
-          <img src={openPhoto.src} alt={openPhoto.alt} />
+          <img src={openPhoto.image_url} alt={openPhoto.alt} />
           <p>{openPhoto.alt}</p>
           <button className="lightbox-close" aria-label="Close">×</button>
         </div>

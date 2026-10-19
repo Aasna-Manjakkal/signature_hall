@@ -15,12 +15,12 @@ function AboutPage() {
       <PageHeader
         eyebrow="About Us"
         title="Your Special Moments, Our Special Place"
-        image="/gallery/open-1.jpg"
+        image="/gallery/DSC09732.JPG"
         crumb="About Us"
       />
 
       <section className="section about-grid">
-        <img src="/gallery/entrance.jpg" alt="Entrance of Signature Hall, Kannur" />
+        <img src="/gallery/entrance.png" alt="Entrance of Signature Hall, Kannur" />
 
         <div>
           <h2 className="title-line">Our Story</h2>
